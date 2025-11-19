@@ -22,7 +22,8 @@ RUN  useradd -m -k /etc/skel --uid ${DOCKER_UID} \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && pip install -U pip \
-  && pip install torch torchvision torchaudio \
+#  && pip install torch torchvision torchaudio \
+  && pip install torch==2.9.0 torchvision==0.24.0 torchaudio==2.9.0 --index-url https://download.pytorch.org/whl/cu128 \
   && pip install ipython scikit-learn matplotlib pillow pandas  \
   && pip install astroquery aplpy astropy photutils firefly-client spectral_cube astrodendro pvextractor \
   && pip install torchsummary torchviz \
